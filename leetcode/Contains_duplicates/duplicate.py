@@ -1,8 +1,13 @@
-class Solution:
-    def containsDuplicate(self, num: List[int]) -> bool:
-        n=len(num)
-        for i in range(n-1):
-            for j in range(i+1,n):
-                if num[i]==num[j]:
-                    return True
+class Solution(object):
+    def containsDuplicate(self, nums):
+        num_set = set()
+        # set() is used to keep track of elements 
+        for i in nums:
+            if i in num_set:
+                return True
+            else:
+                num_set.add(i)
+                #used to add element for future lookups
         return False
+  
+  
